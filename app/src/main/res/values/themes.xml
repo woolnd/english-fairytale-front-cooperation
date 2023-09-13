@@ -15,5 +15,6 @@
 
         <!--title bar delete-->
         <item name="windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 </resources>

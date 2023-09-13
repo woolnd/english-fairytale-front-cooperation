@@ -1,5 +1,6 @@
 package com.example.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,11 @@ class MainFragment: Fragment() {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
+        binding.communityBtnIv.setOnClickListener {
+            val intent = Intent(context, CommunityActivity::class.java)
+            startActivity(intent)
+
+        }
         return binding.root
     }
 }

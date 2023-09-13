@@ -2,6 +2,7 @@ package com.example.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.main.databinding.ActivityMainBinding
 
 class MainActivity: AppCompatActivity() {
@@ -13,6 +14,7 @@ class MainActivity: AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportFragmentManager.beginTransaction().add(R.id.main_fl, MainFragment())
             .commit()
     }
