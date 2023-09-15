@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.main.databinding.FragmentMainBinding
+import java.security.Key
 
 class MainFragment: Fragment() {
 
@@ -26,14 +28,16 @@ class MainFragment: Fragment() {
 
         }
 
-        val itemList = ArrayList<MyBook>()
-        itemList.add(MyBook("hello its me"))
-        itemList.add(MyBook("my name is wodnd"))
+        val books = arrayListOf<Book>(
+            Book("hello", arrayListOf("bio", "hello", "my name is jaewoong", "have a nice day", "hello"), false),
+            Book("hello hello hello", arrayListOf("nice too meet you", "hello", "bye", "bye"), true)
+        )
 
-        val mainAdapter = MainAdapter(itemList)
-        mainAdapter.notifyDataSetChanged()
-        binding.bookRv.adapter = mainAdapter
-        binding.bookRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.bookRv.apply {
+            adapter = MainAdapter().build(books)
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        }
+
         return binding.root
     }
 }

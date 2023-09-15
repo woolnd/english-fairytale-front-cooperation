@@ -1,29 +1,46 @@
 package com.example.main
 
+import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.main.databinding.ItemBookBinding
 
-class MainAdapter(val itemList: ArrayList<MyBook>): RecyclerView.Adapter<MainAdapter.Holder>() {
+class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>(){
+    lateinit var items: ArrayList<Book>
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
-        return Holder(view)
+    fun build(i: ArrayList<Book>) : MainAdapter{
+        items = i
+        return this
     }
 
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.title.text = itemList[position].title
+    class ViewHolder(val binding: ItemBookBinding, val context: Context) : RecyclerView.ViewHolder(binding.root){
+        fun bind(item: Book){
+            with(binding){
+                titleTv.text = item.title
+                if(item.heart.toString() == "true"){
+                    heartIv.setImageResource(R.drawable.heart)
+                }
+                else{
+                    heartIv.setImageResource(R.drawable.blank_heart)
+                }
+                keywordRv.apply {
+                    adapter = KeywordAdapter().build(item.keywords)
+                    layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                }
+            }
+        }
     }
 
-    override fun getItemCount(): Int {
-        return itemList.count()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.ViewHolder = ViewHolder(
+        ItemBookBinding.inflate(LayoutInflater.from(parent.context), parent, false), parent.context)
+
+    override fun getItemCount(): Int = items.size
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(items[position])
     }
 
-    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title = itemView.findViewById<TextView>(R.id.title_tv)
-    }
 
 }
