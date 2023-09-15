@@ -37,7 +37,8 @@ class MainFragment: Fragment() {
             adapter = MainAdapter().build(books)
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }
-
         return binding.root
     }
+
+
 }
