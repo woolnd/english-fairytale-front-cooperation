@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.main.databinding.FragmentMainBinding
 
 class MainFragment: Fragment() {
@@ -24,6 +25,15 @@ class MainFragment: Fragment() {
             startActivity(intent)
 
         }
+
+        val itemList = ArrayList<MyBook>()
+        itemList.add(MyBook("hello its me"))
+        itemList.add(MyBook("my name is wodnd"))
+
+        val mainAdapter = MainAdapter(itemList)
+        mainAdapter.notifyDataSetChanged()
+        binding.bookRv.adapter = mainAdapter
+        binding.bookRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         return binding.root
     }
 }
