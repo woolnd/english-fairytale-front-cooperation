@@ -3,13 +3,13 @@
     android:padding="10dp"
     android:shape="rectangle" >
 
-    <solid android:color="#50B5B6BD"/>
+    <solid android:color="#36B0B0B0"/>
 
 
     <corners
-        android:bottomLeftRadius="12dp"
-        android:bottomRightRadius="12dp"
-        android:topLeftRadius="12dp"
-        android:topRightRadius="12dp" />
+        android:bottomLeftRadius="120dp"
+        android:bottomRightRadius="120dp"
+        android:topLeftRadius="120dp"
+        android:topRightRadius="120dp" />
 
 </shape>

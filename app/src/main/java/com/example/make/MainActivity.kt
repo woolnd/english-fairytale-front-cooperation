@@ -37,8 +37,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.addChipBoxIv.setOnClickListener {
             val text = binding.editText.text.toString()
+            var text_count = 0
+            for (i in text) text_count += 1
 
-            if (text.toString() == "") Toast.makeText(application,"텍스트를 입력해주세요",Toast.LENGTH_SHORT).show()
+            if(text_count < 1 ) Toast.makeText(application,"다시 입력해주세요",Toast.LENGTH_SHORT).show()
+            if(text_count > 15) Toast.makeText(application,"다시 입력해주세요",Toast.LENGTH_SHORT).show()
+
             else {
                 binding.editText.setText(null)
                 var check = 0
