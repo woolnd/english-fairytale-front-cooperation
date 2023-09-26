@@ -29,8 +29,8 @@ class MainFragment: Fragment() {
         }
 
         val books = arrayListOf<Book>(
-            Book("hello", arrayListOf("bio", "hello", "my name is jaewoong", "have a nice day", "hello"), false),
-            Book("hello hello hello", arrayListOf("nice too meet you", "hello", "bye", "bye"), true)
+            Book("Play", arrayListOf("play"), false),
+            Book("My tiger", arrayListOf("scare", "tiger", "anima", "friend"), true)
         )
 
         binding.bookRv.apply {

@@ -24,17 +24,17 @@ class CommunityActivity: AppCompatActivity() {
 
 
         val best = arrayListOf<Books>(
-            Books("hello","hello", arrayListOf("bio", "hello", "my name is jaewoong", "have a nice day", "hello"), false),
-            Books("hello","hello hello hello hello", arrayListOf("nice too meet you", "hello", "bye", "bye"), true),
-            Books("hello","hello hello hello hello", arrayListOf("nice too meet you", "hello", "bye", "bye"), true),
-            Books("hello","hello hello hello hello", arrayListOf("nice too meet you", "hello", "bye", "bye"), true)
+            Books("hello","Play", arrayListOf("play"), false),
+            Books("james","My friend", arrayListOf("friend"), true),
+            Books("ruda","Bag", arrayListOf("heavy"), true),
+            Books("leoa","SmartPhone", arrayListOf("thin"), true)
         )
 
         val books = arrayListOf<Books>(
-            Books("hello","hello", arrayListOf("bio", "hello", "my name is jaewoong", "have a nice day", "hello"), false),
-            Books("hello","hello hello hello hello", arrayListOf("nice too meet you", "hello", "bye", "bye"), true),
-            Books("hello","hello hello hello hello", arrayListOf("nice too meet you", "hello", "bye", "bye"), true),
-            Books("hello","hello hello hello hello", arrayListOf("nice too meet you", "hello", "bye", "bye"), true)
+            Books("hello","Play", arrayListOf("play"), false),
+            Books("justin","My parent", arrayListOf("love", "parent", "family", "happy"), true),
+            Books("john","birthday", arrayListOf("happybirthday", "party", "happy", "remember", "friend"), true),
+            Books("sam","good morning", arrayListOf("niceday", "morning", "breakfast", "hungry"), true)
         )
 
         binding.bestRv.apply {
