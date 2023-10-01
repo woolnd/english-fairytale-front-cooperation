@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="community_gray">#F7F8FA</color>
     <color name="community_basic">#FF9254</color>
+    <color name="translucent_gray">#80808080</color>
+    <color name="mypage_background">#F2F3F5</color>
 </resources>

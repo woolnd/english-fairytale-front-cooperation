@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Main"
         tools:targetApi="31">
+
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -19,8 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".CommunityActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
-        
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
+        <activity android:name=".MypageActivity" android:exported="true">
+        </activity>
+
+        <activity android:name=".InfoActivity" android:exported="true">
+        </activity>
+        <activity android:name=".PwModifyActivity" android:exported="true">
+        </activity>
+
     </application>
 </manifest>

@@ -89,7 +89,7 @@
                 android:id="@+id/make_btn.iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/make_btn"
+                android:src="@drawable/main_btn"
                 app:layout_constraintBottom_toBottomOf="@id/make_fairytale.iv"
                 app:layout_constraintStart_toStartOf="@id/make_fairytale.iv"/>
 

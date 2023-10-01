@@ -212,17 +212,98 @@
                         app:layout_constraintTop_toTopOf="@id/filter.tv"
                         app:layout_constraintEnd_toEndOf="parent"/>
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/community.cl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/community.tv"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img.iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/book_no"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/chip.iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/community_chip"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginStart="20dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/content.tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="아직 올라온 동화가 없어ㅠㅠ"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/chip.iv"
+                            app:layout_constraintStart_toStartOf="@id/chip.iv"/>
+
+                        <TextView
+                            android:id="@+id/sub3.tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="내가 제일먼저 나만의 동화를 올려볼까요?"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/content.tv"
+                            app:layout_constraintStart_toStartOf="@id/content.tv"/>
+
+                        <ImageView
+                            android:id="@+id/btn.iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/make_btn"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintTop_toBottomOf="@id/sub3.tv"
+                            app:layout_constraintStart_toStartOf="@id/img.iv"
+                            app:layout_constraintEnd_toEndOf="@id/img.iv"/>
+
+                        <ImageView
+                            android:id="@+id/globe.iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/globe"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginStart="78dp"
+                            app:layout_constraintTop_toTopOf="@id/btn.iv"
+                            app:layout_constraintStart_toStartOf="@id/btn.iv"/>
+
+                        <TextView
+                            android:id="@+id/sub4.tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="나의 동화 목록으로"
+                            android:textSize="14sp"
+                            android:textColor="#FF8844"
+                            app:layout_constraintTop_toTopOf="@id/globe.iv"
+                            app:layout_constraintStart_toEndOf="@id/globe.iv"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/community.rv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="300dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/community.tv"
+                        app:layout_constraintTop_toBottomOf="@id/community.cl"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         tools:listitem="@layout/item_books"/>
-
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
