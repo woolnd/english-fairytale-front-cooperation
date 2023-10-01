@@ -41,6 +41,9 @@ class InfoActivity: AppCompatActivity(){
             binding.nickBoxIv.setImageResource(R.drawable.info_nick_error)
             binding.nickSubTv.text = "중복된 닉네임입니다"
             binding.nickSubTv.setTextColor(Color.parseColor("#E13017"))
+            binding.btnIv.setImageResource(R.drawable.info_btn)
+            binding.btnTv.setTextColor(Color.parseColor("#FFFFFF"))
+
         }
 
         binding.backIv.setOnClickListener {

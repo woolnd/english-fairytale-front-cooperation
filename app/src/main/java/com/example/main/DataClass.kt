@@ -12,3 +12,9 @@ data class Books(
     var keywords: ArrayList<String>,
     var heart: Boolean
 )
+
+data class Notify(
+    var title: String,
+    var date: String,
+    var content: String
+)

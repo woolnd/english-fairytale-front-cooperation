@@ -21,16 +21,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CommunityActivity"
-            android:windowSoftInputMode="adjustPan">
+        <activity android:name=".CommunityActivity" android:windowSoftInputMode="adjustPan">
         </activity>
 
-        <activity android:name=".MypageActivity" android:exported="true">
+        <activity android:name=".MypageActivity" android:exported="false">
         </activity>
 
-        <activity android:name=".InfoActivity" android:exported="true">
+        <activity android:name=".InfoActivity" android:exported="false">
         </activity>
-        <activity android:name=".PwModifyActivity" android:exported="true">
+
+        <activity android:name=".PwModifyActivity" android:exported="false">
+        </activity>
+
+        <activity android:name=".NotifyActivity" android:exported="false">
         </activity>
 
     </application>
