@@ -2,28 +2,44 @@ package com.example.make
 
 import android.app.Instrumentation.ActivityResult
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.media.session.MediaSession.Token
+import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.View.OnClickListener
+import android.view.View.TEXT_ALIGNMENT_VIEW_END
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.make.databinding.ActivityMainBinding
+import java.net.URI
 
 class MainActivity : AppCompatActivity() {
+
+    val REQ_GALLERY = 1
+
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.imageView.setOnClickListener {
+            openGallery()
+        }
         window.statusBarColor = ContextCompat.getColor(this, R.color.gray)
+
 
         binding.randomMakeBtnIv.setOnClickListener {
             val intent = Intent(this, LoadingActivity::class.java)
@@ -129,6 +145,26 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    fun openGallery() {
+        val intent = Intent(Intent.ACTION_PICK) //선택할수있는 창이나온다 -> 어떤 종류의 데이터를 선택할지 정한다.
+        intent.type = MediaStore.Images.Media.CONTENT_TYPE
+        startActivityForResult(intent,REQ_GALLERY)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == RESULT_OK) {
+            when(requestCode) {
+                REQ_GALLERY -> {
+                    data?.data?.let { uri ->
+                        binding.imageView.setImageURI(uri)
+                        binding.phototext.visibility = View.GONE
+                    }
+                }
+            }
+        }
     }
 
     fun verifyId(id: String) : Boolean {
