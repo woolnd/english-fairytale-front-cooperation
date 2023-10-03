@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/profile.iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/master_profile"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/title.tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGO"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card1.cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        app:layout_constraintTop_toBottomOf="@id/title.tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/card1.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_main_card"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/card1_icon.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_documents"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="@id/card1.iv"
+            app:layout_constraintStart_toStartOf="@id/card1.iv"
+            app:layout_constraintBottom_toBottomOf="@id/card1.iv"/>
+
+        <TextView
+            android:id="@+id/card1.tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="게시물 관리"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@id/card1_icon.iv"
+            app:layout_constraintStart_toEndOf="@id/card1_icon.iv"
+            app:layout_constraintBottom_toBottomOf="@id/card1_icon.iv"/>
+
+        <ImageView
+            android:id="@+id/card1_arrow.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_main_arrow"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toTopOf="@id/card1.iv"
+            app:layout_constraintBottom_toBottomOf="@id/card1.iv"
+            app:layout_constraintEnd_toEndOf="@id/card1.iv"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card2.cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@id/card1.cl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/card2.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_main_card"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/card2_icon.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_person"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="@id/card2.iv"
+            app:layout_constraintBottom_toBottomOf="@id/card2.iv"
+            app:layout_constraintStart_toStartOf="@id/card2.iv"/>
+
+        <TextView
+            android:id="@+id/card2.tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원관리"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@id/card2_icon.iv"
+            app:layout_constraintBottom_toBottomOf="@id/card2_icon.iv"
+            app:layout_constraintStart_toEndOf="@id/card2_icon.iv"/>
+
+        <ImageView
+            android:id="@+id/card2_arrow.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_main_arrow"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toTopOf="@id/card2.iv"
+            app:layout_constraintBottom_toBottomOf="@id/card2.iv"
+            app:layout_constraintEnd_toEndOf="@id/card2.iv"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/card3.iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/master_main_card2"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@id/card2.cl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/chip1.iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/master_main_chip"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="@id/card3.iv"
+        app:layout_constraintStart_toStartOf="@id/card3.iv"/>
+
+    <TextView
+        android:id="@+id/chip1.tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="닉네임 신고"
+        android:textColor="#5C5D61"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/chip1.iv"
+        app:layout_constraintStart_toStartOf="@id/chip1.iv"
+        app:layout_constraintEnd_toEndOf="@id/chip1.iv"
+        app:layout_constraintBottom_toBottomOf="@id/chip1.iv"/>
+
+    <TextView
+        android:id="@+id/nick.tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="32건의 신고 접수"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/chip1.iv"
+        app:layout_constraintStart_toStartOf="@id/chip1.iv"/>
+
+    <TextView
+        android:id="@+id/sub1.tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="읽지않은 신고접수가 12개 존재합니다."
+        android:textSize="12sp"
+        android:textColor="#6F7075"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/nick.tv"
+        app:layout_constraintStart_toStartOf="@id/nick.tv"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn1.cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/sub1.tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/btn1.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_main_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/btn1.tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닉네임 신고 목록으로"
+            android:textColor="#EE3117"
+            android:textSize="14sp"
+            android:layout_marginStart="6dp"
+            app:layout_constraintTop_toTopOf="@id/btn1.iv"
+            app:layout_constraintBottom_toBottomOf="@id/btn1.iv"
+            app:layout_constraintStart_toEndOf="@id/btn1_icon.iv" />
+
+        <ImageView
+            android:id="@+id/btn1_icon.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_person2"
+            android:layout_marginStart="72dp"
+            app:layout_constraintTop_toTopOf="@id/btn1.iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/btn1.iv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/card4.iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/master_main_card2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card3.iv" />
+
+    <ImageView
+        android:id="@+id/chip2.iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/master_main_chip"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="@id/card4.iv"
+        app:layout_constraintStart_toStartOf="@id/card4.iv"/>
+
+    <TextView
+        android:id="@+id/chip2.tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="게시물 신고"
+        android:textColor="#5C5D61"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/chip2.iv"
+        app:layout_constraintStart_toStartOf="@id/chip2.iv"
+        app:layout_constraintEnd_toEndOf="@id/chip2.iv"
+        app:layout_constraintBottom_toBottomOf="@id/chip2.iv"/>
+
+    <TextView
+        android:id="@+id/book.tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="32건의 신고 접수"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/chip2.iv"
+        app:layout_constraintStart_toStartOf="@id/chip2.iv"/>
+
+    <TextView
+        android:id="@+id/sub2.tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="읽지않은 신고접수가 12개 존재합니다."
+        android:textSize="12sp"
+        android:textColor="#6F7075"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/book.tv"
+        app:layout_constraintStart_toStartOf="@id/book.tv"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn2.cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/sub2.tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/btn2.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_main_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/btn2.tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닉네임 신고 목록으로"
+            android:textColor="#EE3117"
+            android:textSize="14sp"
+            android:layout_marginStart="6dp"
+            app:layout_constraintTop_toTopOf="@id/btn2.iv"
+            app:layout_constraintBottom_toBottomOf="@id/btn2.iv"
+            app:layout_constraintStart_toEndOf="@id/btn2_icon.iv" />
+
+        <ImageView
+            android:id="@+id/btn2_icon.iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/master_document"
+            android:layout_marginStart="72dp"
+            app:layout_constraintTop_toTopOf="@id/btn2.iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/btn2.iv"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
