@@ -18,3 +18,8 @@ data class Notify(
     var date: String,
     var content: String
 )
+
+data class Faq(
+    var title: String,
+    var content: String
+)

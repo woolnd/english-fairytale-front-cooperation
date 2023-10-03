@@ -31,5 +31,19 @@ class MypageActivity: AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.faqIv.setOnClickListener {
+            val intent = Intent(this, FaqActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.serviceIv.setOnClickListener {
+            val intent = Intent(this, ServiceActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.privacyIv.setOnClickListener {
+            val intent = Intent(this, PrivacyActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

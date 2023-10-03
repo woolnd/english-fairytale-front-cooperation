@@ -36,5 +36,14 @@
         <activity android:name=".NotifyActivity" android:exported="false">
         </activity>
 
+        <activity android:name=".FaqActivity" android:exported="false">
+        </activity>
+
+        <activity android:name=".ServiceActivity" android:exported="false">
+        </activity>
+
+        <activity android:name=".PrivacyActivity" android:exported="false">
+        </activity>
+
     </application>
 </manifest>
