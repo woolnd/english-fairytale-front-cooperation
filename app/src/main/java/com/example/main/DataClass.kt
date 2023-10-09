@@ -23,3 +23,10 @@ data class Faq(
     var title: String,
     var content: String
 )
+
+data class Search(
+    var title: String,
+    var keywords: String,
+    var nick: String,
+    var heart: Boolean
+)

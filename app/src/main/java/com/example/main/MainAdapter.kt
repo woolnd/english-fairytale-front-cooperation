@@ -60,7 +60,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>(){
                 }
 
                 //하트클릭 시 이미지 변환
-                binding.heartIv.setOnClickListener {
+                heartIv.setOnClickListener {
                     val currentImg = binding.heartIv.drawable
                     val heart = ContextCompat.getDrawable(context, R.drawable.heart)
                     val blankheart = ContextCompat.getDrawable(context, R.drawable.blank_heart)
