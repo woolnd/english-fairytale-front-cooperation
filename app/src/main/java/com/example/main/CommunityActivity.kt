@@ -1,5 +1,6 @@
 package com.example.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.PopupMenu
@@ -71,6 +72,11 @@ class CommunityActivity: AppCompatActivity() {
                     }
                 }
             }
+        }
+
+        binding.searchBarIv.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
         }
         binding.back1Iv.setOnClickListener {
             finish()

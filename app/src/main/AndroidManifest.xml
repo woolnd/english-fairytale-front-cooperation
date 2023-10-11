@@ -13,8 +13,14 @@
         android:theme="@style/Theme.Main"
         tools:targetApi="31">
 
-        <activity android:name=".MainActivity"
-            android:exported="false">
+        <activity android:name=".InitialActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity" android:exported="false">
         </activity>
 
         <activity android:name=".CommunityActivity" android:windowSoftInputMode="adjustPan">
@@ -41,11 +47,7 @@
         <activity android:name=".PrivacyActivity" android:exported="false">
         </activity>
 
-        <activity android:name=".SearchActivity" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+        <activity android:name=".SearchActivity" android:exported="false">
         </activity>
 
     </application>

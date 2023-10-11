@@ -1,5 +1,6 @@
 package com.example.main
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -8,7 +9,7 @@ import com.example.main.databinding.ActivitySearchBinding
 class SearchActivity: AppCompatActivity() {
     lateinit var binding: ActivitySearchBinding
     lateinit var tab1: SearchFragment
-    lateinit var tab2: MainFragment
+    lateinit var tab2: SearchFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySearchBinding.inflate(layoutInflater)
@@ -16,16 +17,24 @@ class SearchActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         tab1 = SearchFragment()
-        tab2 = MainFragment()
+        tab2 = SearchFragment()
 
         supportFragmentManager.beginTransaction().add(R.id.search_fl, tab1).commit()
 
         binding.filterLeftIv.setOnClickListener {
             replaceView(tab1)
+            binding.filterLeftIv.setImageResource(R.drawable.filter_left)
+            binding.filterRightIv.setImageResource(R.drawable.filter_right_gray)
+            binding.filterRightTv.setTextColor(Color.parseColor("#B5B6BD"))
+            binding.filterLeftTv.setTextColor(Color.parseColor("#000000"))
         }
 
         binding.filterRightIv.setOnClickListener {
             replaceView(tab2)
+            binding.filterLeftIv.setImageResource(R.drawable.filter_left_gray)
+            binding.filterRightIv.setImageResource(R.drawable.filter_right)
+            binding.filterRightTv.setTextColor(Color.parseColor("#000000"))
+            binding.filterLeftTv.setTextColor(Color.parseColor("#B5B6BD"))
         }
     }
 
