@@ -1,5 +1,6 @@
 package com.example.main
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
@@ -21,19 +22,6 @@ class InitialActivity: AppCompatActivity() {
 
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
 
-//        Handler(Looper.getMainLooper()).postDelayed({
-//            val currentImg = binding.backgroundIv.drawable
-//            val back1 = ContextCompat.getDrawable(this, R.drawable.initial_back1)
-//            val back2 = ContextCompat.getDrawable(this, R.drawable.initial_back2)
-//            if (currentImg != null && back1 != null && back2 != null) {
-//                if (areDrawablesEqual(currentImg, back1)) {
-//                    binding.backgroundIv.setImageResource(R.drawable.initial_back2)
-//                } else if (areDrawablesEqual(currentImg, back2)) {
-//                    binding.backgroundIv.setImageResource(R.drawable.initial_back1)
-//                }
-//            }
-//        }, 3000)
-
         val handler = Handler(Looper.getMainLooper())
 
         val runnable = object : Runnable {
@@ -54,6 +42,16 @@ class InitialActivity: AppCompatActivity() {
 
 // 처음 실행 예약
         handler.postDelayed(runnable, 3000)
+
+        binding.pwTv.setOnClickListener {
+            val intent = Intent(this, ResetPwActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.loginTv.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun areDrawablesEqual(drawable1: Drawable, drawable2: Drawable): Boolean {

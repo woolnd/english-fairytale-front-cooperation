@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/back_gray"
         app:layout_constraintTop_toTopOf="@id/title.tv"
-        app:layout_constraintStart_toStartOf="@id/email_box.iv"/>
+        app:layout_constraintStart_toStartOf="@id/email_box.iv"
+        app:layout_constraintBottom_toBottomOf="@id/title.tv"/>
 
     <ImageView
         android:id="@+id/profile.iv"

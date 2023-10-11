@@ -50,5 +50,11 @@
         <activity android:name=".SearchActivity" android:exported="false">
         </activity>
 
+        <activity android:name=".LoginActivity" android:exported="false">
+        </activity>
+
+        <activity android:name=".ResetPwActivity" android:exported="false">
+        </activity>
+
     </application>
 </manifest>
