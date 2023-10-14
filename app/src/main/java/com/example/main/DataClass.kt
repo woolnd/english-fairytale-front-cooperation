@@ -30,3 +30,12 @@ data class Search(
     var nick: String,
     var heart: Boolean
 )
+
+data class LoginReqeust(
+    var email: String,
+    var password: String
+)
+
+data class LoginResponse(
+    var id: Int
+)

@@ -12,9 +12,16 @@ import android.text.InputType
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.main.databinding.ActivityLoginBinding
+import okhttp3.OkHttpClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.regex.Pattern
 
 class LoginActivity: AppCompatActivity() {
@@ -23,6 +30,20 @@ class LoginActivity: AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        val httpClient = OkHttpClient.Builder()
+            .addInterceptor(TokenInterceptor()) // Add your custom interceptor
+            .build()
+
+        var retrofit = Retrofit.Builder()
+            .baseUrl("http://52.78.27.113:8080")//서버 주소를 적을 것
+            .client(httpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        var Service = retrofit.create(Service::class.java)
+
+
 
         binding.emailEt.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
@@ -94,6 +115,44 @@ class LoginActivity: AppCompatActivity() {
             }
         }
 
+        binding.btnIv.setOnClickListener {
+            var email = binding.emailEt.text.toString()
+            val password = binding.pwEt.text.toString()
+            var dialog = AlertDialog.Builder(this@LoginActivity)
+
+            Service.login(LoginReqeust(email, password)).enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    var result: LoginResponse? = response.body() //서버에서 받은 코드값을 duplic_code 객체에 넣음
+                    if(result != null){
+                        if(result.id != null){
+                            var intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            startActivity(intent)
+                        }
+                        else{
+                            dialog.setTitle("로그인 실패")
+                            dialog.setMessage("로그인에 실패하였습니다.")
+                            dialog.show()
+                        }
+                    }
+                    else{
+                        dialog.setTitle("로그인 실패")
+                        dialog.setMessage("로그인에 실패하였습니다.")
+                        dialog.show()
+                    }
+
+                }
+
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    //웹통신이 실패했을 시
+                    dialog.setTitle("통신 실패")
+                    dialog.setMessage("통신에 실패하였습니다.")
+                    dialog.show()
+
+                }
+
+            })
+        }
+
         binding.backIv.setOnClickListener {
             finish()
         }
@@ -110,7 +169,7 @@ class LoginActivity: AppCompatActivity() {
     }
 
     fun verifyPw(pw: String): Boolean{
-        val regexPw = """^(?=.*[a-zA-Z])(?=.*\d).{8,15}$""".toRegex()
+        val regexPw = """^(?=.*[a-zA-Z])(?=.*\d).{2,10}$""".toRegex()
         return regexPw.matches(pw)
     }
 

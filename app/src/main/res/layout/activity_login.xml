@@ -139,7 +139,7 @@
         android:id="@+id/error2.tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="영문 숫자 조합 8~15자 조합으로 입력해 주세요"
+        android:text="영문 숫자 조합 2~10자 조합으로 입력해 주세요"
         android:textColor="#E13017"
         android:textSize="12sp"
         android:visibility="gone"
