@@ -5,13 +5,3 @@
   <corners android:radius="20dp" />
   <solid android:color="@color/white" />
 </shape>
-
-    <!--<vector xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    android:width="324dp"-->
-<!--    android:height="281dp"-->
-<!--    android:viewportWidth="324"-->
-<!--    android:viewportHeight="281">-->
-<!--  <path-->
-<!--      android:pathData="M22,1L302,1A16,16 0,0 1,318 17L318,254A16,16 0,0 1,302 270L22,270A16,16 0,0 1,6 254L6,17A16,16 0,0 1,22 1z"-->
-<!--      android:fillColor="#ffffff"/>-->
-<!--</vector>-->

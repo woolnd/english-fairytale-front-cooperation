@@ -1,5 +1,7 @@
 package com.example.main
 
+import androidx.annotation.Nullable
+
 data class Book(
     var title: String,
     var keywords: ArrayList<String>,

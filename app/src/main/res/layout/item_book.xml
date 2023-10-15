@@ -11,6 +11,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:cardCornerRadius="16dp"-->
+<!--            app:cardElevation="4dp">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="328dp"-->
+<!--                android:layout_height="148dp"-->
+<!--                android:src="@drawable/book_card_ex1"-->
+<!--                android:background="@drawable/a"-->
+<!--                app:layout_constraintTop_toTopOf="@id/book_ex1.iv"-->
+<!--                app:layout_constraintStart_toStartOf="@id/book_ex1.iv"-->
+<!--                android:scaleType="centerCrop"/>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
         <ImageView
             android:id="@+id/book_ex1.iv"
             android:layout_width="wrap_content"
