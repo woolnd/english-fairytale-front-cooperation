@@ -16,4 +16,5 @@ interface Service {
     fun nick(
         @Query("nickname") nickname: String
     ) : Call<Unit>
+
 }

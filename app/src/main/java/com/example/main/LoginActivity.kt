@@ -126,6 +126,7 @@ class LoginActivity: AppCompatActivity() {
                     if(result != null){
                         if(result.id != null){
                             var intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            intent.putExtra("memberId",result.id)
                             startActivity(intent)
                         }
                         else{

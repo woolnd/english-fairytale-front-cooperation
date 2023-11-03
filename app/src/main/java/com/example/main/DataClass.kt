@@ -41,3 +41,8 @@ data class LoginReqeust(
 data class LoginResponse(
     var id: Int
 )
+
+data class ModifyPw(
+    var originalPassword: String,
+    var newPassword: String
+)

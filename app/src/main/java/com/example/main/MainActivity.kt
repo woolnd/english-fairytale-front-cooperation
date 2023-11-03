@@ -15,12 +15,14 @@ class MainActivity: AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var memberId = intent.getIntExtra("memberId", 0)
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportFragmentManager.beginTransaction().add(R.id.main_fl, MainFragment())
             .commit()
 
         binding.profileIv.setOnClickListener {
             val intent = Intent(this, MypageActivity::class.java)
+            intent.putExtra("memberId", memberId)
             startActivity(intent)
         }
     }

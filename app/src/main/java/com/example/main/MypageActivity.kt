@@ -15,6 +15,7 @@ class MypageActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val memberId = intent.getIntExtra("memberid", 0)
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
 
         binding.backIv.setOnClickListener {

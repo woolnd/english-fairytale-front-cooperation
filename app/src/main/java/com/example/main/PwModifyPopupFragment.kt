@@ -1,5 +1,6 @@
 package com.example.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,7 @@ class PwModifyPopupFragment: Fragment() {
         binding = FragmentPwModifyPopupBinding.inflate(inflater, container, false)
 
         binding.btnIv.setOnClickListener {
+            (activity as PwModifyActivity).finishActivity()
             (activity as PwModifyActivity).changeFragment(this)
         }
 
