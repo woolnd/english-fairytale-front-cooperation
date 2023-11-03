@@ -2,8 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--저장파일에 접근하기 위한 퍼미션 설정-->
     <uses-permission android:name='android.permission.READ_EXTERNAL_STORAGE'/>
     <uses-permission android:name='android.permission.WRITE_EXTERNAL_STORAGE'/>
+
+<!--    마이크를 사용하기 위한 권한 설정-->
+<!--    인터넷 권한-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+<!--    오디오 권한-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+        <intent>
+            <action android:name="android.intext.action.TTS_SERVICE" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="true"
@@ -25,6 +41,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+
+
         </activity>
 
         <activity
@@ -44,11 +62,11 @@
             android:name=".BookActivity"
             android:exported="false">
 
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-
-
-
-
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
 
         </activity>
 
