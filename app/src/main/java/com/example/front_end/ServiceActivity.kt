@@ -2,7 +2,7 @@ package com.example.front_end
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.main.databinding.ActivityServiceBinding
+import com.example.front_end.databinding.ActivityServiceBinding
 
 class ServiceActivity: AppCompatActivity() {
 
